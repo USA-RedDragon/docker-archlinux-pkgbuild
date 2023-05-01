@@ -6,3 +6,6 @@ RUN mkdir -p /home/user/.gnupg
 RUN chown -R user:user /home/user
 RUN dbus-uuidgen --ensure=/etc/machine-id
 RUN sed -i "s|MAKEFLAGS=.*|MAKEFLAGS=-j$(nproc)|" /etc/makepkg.conf
+
+# Add the user to the sudoers list
+RUN echo "user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
