@@ -12,6 +12,8 @@ Server = https://raw.githubusercontent.com/USA-RedDragon/arch-packages/bins/x86_
 Include = /etc/pacman.d/mirrorlist
 EOF
 
+RUN reflector -p https --delay 0.5 --fastest 15 --sort rate --save /etc/pacman.d/mirrorlist
+
 RUN curl -fSsLo /tmp/usa-reddragon-keyring-20230501-6-any.pkg.tar.zst https://github.com/USA-RedDragon/arch-packages/raw/bins/x86_64/usa-reddragon-keyring-20230501-6-any.pkg.tar.zst && \
   pacman --noconfirm -U /tmp/usa-reddragon-keyring-20230501-6-any.pkg.tar.zst && \
   rm -f /tmp/usa-reddragon-keyring-20230501-6-any.pkg.tar.zst
