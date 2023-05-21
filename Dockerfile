@@ -7,6 +7,9 @@ RUN cat <<EOF >> /etc/pacman.conf
 [usa-reddragon]
 SigLevel = Required TrustedOnly
 Server = https://raw.githubusercontent.com/USA-RedDragon/arch-packages/bins/x86_64
+
+[multilib]
+Include = /etc/pacman.d/mirrorlist
 EOF
 
 RUN curl -fSsLo /tmp/usa-reddragon-keyring-20230501-5-any.pkg.tar.zst https://github.com/USA-RedDragon/arch-packages/raw/bins/x86_64/usa-reddragon-keyring-20230501-5-any.pkg.tar.zst && \
