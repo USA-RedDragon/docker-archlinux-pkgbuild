@@ -16,7 +16,7 @@ RUN curl -fSsLo /tmp/usa-reddragon-keyring-20230501-6-any.pkg.tar.zst https://gi
   pacman --noconfirm -U /tmp/usa-reddragon-keyring-20230501-6-any.pkg.tar.zst && \
   rm -f /tmp/usa-reddragon-keyring-20230501-6-any.pkg.tar.zst
 
-RUN pacman --noconfirm -Syyu --needed git devtools dbus sudo usa-reddragon-keyring
+RUN pacman --noconfirm -Syyu --needed git devtools dbus sudo usa-reddragon-keyring reflector
 RUN useradd -m user || true
 RUN mkdir -p /home/user/.gnupg
 RUN chown -R user:user /home/user
