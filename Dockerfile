@@ -12,9 +12,9 @@ Server = https://raw.githubusercontent.com/USA-RedDragon/arch-packages/bins/x86_
 Include = /etc/pacman.d/mirrorlist
 EOF
 
-RUN curl -fSsLo /tmp/usa-reddragon-keyring-20230501-5-any.pkg.tar.zst https://github.com/USA-RedDragon/arch-packages/raw/bins/x86_64/usa-reddragon-keyring-20230501-5-any.pkg.tar.zst && \
-  pacman --noconfirm -U /tmp/usa-reddragon-keyring-20230501-5-any.pkg.tar.zst && \
-  rm -f /tmp/usa-reddragon-keyring-20230501-5-any.pkg.tar.zst
+RUN curl -fSsLo /tmp/usa-reddragon-keyring-20230501-6-any.pkg.tar.zst https://github.com/USA-RedDragon/arch-packages/raw/bins/x86_64/usa-reddragon-keyring-20230501-6-any.pkg.tar.zst && \
+  pacman --noconfirm -U /tmp/usa-reddragon-keyring-20230501-6-any.pkg.tar.zst && \
+  rm -f /tmp/usa-reddragon-keyring-20230501-6-any.pkg.tar.zst
 
 RUN pacman --noconfirm -Syyu --needed git devtools dbus sudo usa-reddragon-keyring
 RUN useradd -m user || true
